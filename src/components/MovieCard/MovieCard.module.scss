@@ -1,0 +1,75 @@
+@use "../../styles/variables/variables.scss";
+
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1.35;
+  border-radius: 10px;
+  overflow: hidden;
+  &:hover,
+  &:focus-within,
+  &:focus {
+    border: 1px solid variables.$border-color;
+    .card__footer {
+      transform: translateY(0%);
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+  &__footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    transform: translateY(100%);
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    background-color: variables.$bg-light-color;
+    transition: ease 0.3s transform;
+  }
+  &__btn {
+    background-color: variables.$bg-lighter-color;
+    padding: 10px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 2px solid variables.$border-light-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease 0.3s border-color;
+
+    &.card__active {
+      background-color: white;
+      color: variables.$bg-light-color;
+    }
+
+    &:hover {
+      border-color: white;
+    }
+  }
+  &__skeleton {
+    width: 100%;
+    aspect-ratio: 1/1.35;
+    border-radius: 10px;
+    background-color: variables.$bg-lighter-color;
+    background: linear-gradient(
+        100deg,
+        variables.$bg-lighter-color 40%,
+        rgba(62, 62, 62, 0.5) 50%,
+        variables.$bg-lighter-color 60%
+      )
+      variables.$bg-lighter-color;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}

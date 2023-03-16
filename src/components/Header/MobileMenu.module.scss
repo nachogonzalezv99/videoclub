@@ -1,0 +1,34 @@
+@use "../../styles/variables/variables.scss";
+.mobileNav {
+  z-index: variables.$z-menu;
+  &__hamburguer {
+    font-size: 29px;
+    margin-left: 20px;
+  }
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 33px;
+  }
+  &__content {
+    position: fixed;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  &__link {
+    color: variables.$text-light-color;
+    font-size: 24px;
+  }
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+@use "../styles/variables/variables.scss";
+
+.active {
+  background-color: white !important;
+  color: variables.$bg-light-color;
+}
+
+.error {
+  color: variables.$error;
+  border-color: variables.$error !important;
+}
+
+.active:disabled {
+  background-color: rgb(173, 173, 173) !important;
+}
